@@ -14,11 +14,10 @@ class App extends Component {
     const container = document.querySelector(".container");
     const card = document.querySelector(".card");
     //Items
-    const title = document.querySelector(".title");
     const sneaker = document.querySelector(".sneaker img");
-    const purchase = document.querySelector(".purchase button");
+    const title = document.querySelector(".title");
     const description = document.querySelector(".info h3");
-    const sizes = document.querySelector(".sizes");
+    const data = document.querySelector(".description");
 
     container.addEventListener('mousemove', (e) => {
       this.setState({
@@ -32,12 +31,10 @@ class App extends Component {
       card.style.transition = 'none';
 
       //Popout
-      title.style.transform = `translateZ(150px)`;
       sneaker.style.transform = `translateZ(200px) rotateZ(-45deg)`;
-      purchase.style.transform = `translateZ(150px)`;
+      title.style.transform = `translateZ(150px)`;
       description.style.transform = `translateZ(125px)`;
-      sizes.style.transform = `translateZ(100px)`;
-      purchase.style.transform = `translateZ(75px)`;
+      data.style.transform = `translateZ(125px)`;
     })
 
     //Animate Out
@@ -46,12 +43,10 @@ class App extends Component {
       card.style.transform = `rotateY(0deg) rotateX(0deg)`;
 
       // Popback
-      title.style.transform = `translateZ(0)`;
       sneaker.style.transform = `translateZ(0) rotateZ(0deg)`;
-      purchase.style.transform = `translateZ(0)`;
+      title.style.transform = `translateZ(0)`;
       description.style.transform = `translateZ(0)`;
-      sizes.style.transform = `translateZ(0)`;
-      purchase.style.transform = `translateZ(0)`;
+      data.style.transform = `translateZ(0)`;
     });
   }
 
@@ -64,8 +59,6 @@ class App extends Component {
       transform: `rotateY(${yAxis}deg) rotateX(${xAxis}deg)`,
     }
 
-    // console.log(`Eixo X: ${xAxis} \n Eixo Y: ${yAxis}`);
-
     return (
       <div className="App">
         <div className="container">
@@ -76,16 +69,42 @@ class App extends Component {
           </div>
           <div className="info">
             <h1 className="title">Charizard</h1>
-            <h3>Eagle eagle eagle eagle</h3>
-            <div className="sizes">
-              <button>39</button>
-              <button>40</button>
-              <button className="active">42</button>
-              <button>44</button>
+            <h3>
+              Ele cospe fogo que é quente o suficiente 
+              para derreter pedras. Pode causar incêndios 
+              florestais ao soprar chamas.
+            </h3>
+
+            <div className="container-description">
+              <div className="description">
+                <div className="data">
+                  <p>Altura</p>
+                  <span>1,70 m</span>
+                </div>
+
+                <div className="data">
+                  <p>Categoria</p>
+                  <span>Fogo</span>
+                </div>
+
+                <div className="data">
+                  <p>Peso</p>
+                  <span>90,5 kg</span>
+                </div>
+
+                <div className="data">
+                  <p>Habilidades</p>
+                  <span>Fogo</span>
+                </div>
+
+                <div className="data">
+                  <p>Gênero</p>
+                  <span>Masc. / Fem</span>
+                </div>
+
+              </div>
             </div>
-            <div className="purchase">
-              <button>Purchase</button>
-            </div>
+            
           </div>
         </div>
        </div>
